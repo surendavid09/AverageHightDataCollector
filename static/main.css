@@ -1,0 +1,51 @@
+html, body{
+    height:100%;
+    margin: 0
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #71FF89;
+    color: #8971FF;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container h1{
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    color: #FF8971;
+    margin-top: 80px
+}
+
+.container form{
+    margin: 20px;
+}
+
+.container input{
+    width: 200px;
+    height:15px;
+    font-size: 15px;
+    margin: 2px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.container button{
+    width: 70px;
+    height: 30px;
+    background-color: #FF8971;
+    margin: 4px;
+}
+
+.container p {
+    margin: 100px;
+}
+
+.message{
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: #71e7ff;
+}
