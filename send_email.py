@@ -4,7 +4,7 @@ import smtplib
 #use app password for pass - generated on gmail side
 def send_email(email, height, average_height, count):
     from_email="suren.m.david@gmail.com"
-    from_password="vqftmdpjyuxqowiu"
+
     to_email=email
 
     subject="Height data"
