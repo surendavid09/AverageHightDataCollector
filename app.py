@@ -9,8 +9,11 @@ app.config['SQLALCHEMY_DATABASE_URI']='postgres://gzszbiazhqrizv:8cee839873db2a5
 
 db=SQLAlchemy(app)
 
-#create model for table - column parameters -- create database model object
 class Data(db.Model):
+    """
+    create model for table - column parameters -- create database model object
+    if database is not created - this creates new database and initializes
+    """
     __tablename__="data"
     id=db.Column(db.Integer, primary_key=True)
     email_=db.Column(db.String(120), unique=True)
@@ -27,6 +30,12 @@ def index():
 
 @app.route("/success",methods=['POST'])
 def success():
+    """
+    Creates a new entry if email is not already in Database
+    Using imported method send_email - will send email back to
+    user that submitted data with average of total data and
+    count of users that have submitted
+    """
     if request.method=="POST":
         #assign values to variables to transfer to database
         email=request.form["email_name"]
@@ -44,7 +53,6 @@ def success():
             average_height=round(average_height,1)
             count=db.session.query(Data.height_).count()
             send_email(email, height, average_height, count)
-            print(average_height)
             return render_template("success.html")
 
     #if not  render index.html page instead
